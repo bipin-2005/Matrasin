@@ -516,6 +516,136 @@ hr.divider{border:none;border-top:1px solid rgba(44,80,22,.13);margin:0;}
   .hero-quote{font-size:1.8rem;}
   .manifesto-word{font-size:4.5rem;}
 }
+.has-dropdown {
+  position: relative;
+}
+
+.mega-drop {
+  display: none;
+}
+
+.has-dropdown.active .mega-drop {
+  display: block;
+}
+
+/* Desktop Hover */
+@media (min-width: 992px) {
+  .has-dropdown:hover .mega-drop {
+    display: block;
+  }
+}
+
+
+/* ═════════ MOBILE PROGRAMMES DROPDOWN ═════════ */
+
+.mob-links .has-dropdown{
+  border-bottom:1px solid rgba(255,255,255,0.08);
+}
+
+.mob-links .drop-toggle{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  width:100%;
+  padding:16px 0;
+  font-family:var(--ff-head);
+  font-size:19px;
+  font-style:italic;
+  color:var(--cream);
+  cursor:pointer;
+}
+
+.mob-links .drop-toggle::after{
+  content:"+";
+  font-size:22px;
+  font-style:normal;
+  transition:transform .3s ease;
+  opacity:.7;
+}
+
+.mob-links .has-dropdown.active .drop-toggle::after{
+  transform:rotate(45deg);
+}
+
+/* Dropdown Box */
+.mob-drop{
+  display:none;
+  margin:8px 0 18px;
+  padding:14px;
+  border-radius:18px;
+
+  background:rgba(255,255,255,0.06);
+  backdrop-filter:blur(10px);
+
+  border:1px solid rgba(255,255,255,0.08);
+}
+
+/* Show dropdown */
+.has-dropdown.active .mob-drop{
+  display:block;
+  animation:fadeDown .35s ease;
+}
+
+/* Inner Links */
+.mob-drop .mega-links{
+  display:flex;
+  flex-direction:column;
+  gap:12px;
+}
+
+.mob-drop .mega-links li{
+  border:none;
+}
+
+/* Programme Links */
+.mob-drop .mega-links a{
+  display:block;
+  padding:12px 14px;
+
+  border-radius:12px;
+
+  background:rgba(255,255,255,0.04);
+
+  color:var(--cream);
+
+  font-family:var(--ff-body);
+  font-size:14px;
+  font-weight:700;
+
+  line-height:1.5;
+
+  transition:all .3s ease;
+}
+
+/* Hover */
+.mob-drop .mega-links a:hover{
+  background:rgba(255,255,255,0.12);
+  transform:translateX(4px);
+}
+
+/* Subtext */
+.mob-drop .mega-links span{
+  display:block;
+  margin-top:5px;
+
+  font-size:11px;
+  font-weight:400;
+  line-height:1.5;
+
+  color:rgba(255,255,255,0.65);
+}
+
+/* Animation */
+@keyframes fadeDown{
+  from{
+    opacity:0;
+    transform:translateY(-8px);
+  }
+  to{
+    opacity:1;
+    transform:translateY(0);
+  }
+}
 </style>
 </head>
 <body>
@@ -606,24 +736,53 @@ hr.divider{border:none;border-top:1px solid rgba(44,80,22,.13);margin:0;}
       </li>
 
       <!-- PROGRAMMES — with correct category + 4 programmes -->
+<li class="has-dropdown">
+  <a href="javascript:void(0);" class="drop-toggle">
+    PROGRAMMES
+    <svg class="chev" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24">
+      <path d="M6 9l6 6 6-6"/>
+    </svg>
+  </a>
+
+  <div class="mega-drop">
+    <div class="mega-head">
+      <h3>PROGRAMMES</h3>
+      <p>Evidence-based lifestyle modification programmes for lasting transformation.</p>
+    </div>
+
+    <div class="mega-category">Lifestyle Modification Programs</div>
+
+    <ul class="mega-links">
       <li>
-        <a href="#">PROGRAMMES
-          <svg class="chev" width="10" height="10" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path d="M6 9l6 6 6-6"/></svg>
+        <a href="metabolic-health.html">
+          Lifestyle Modification for Metabolic Health<br/>
+          <span>(PCOD/PCOS, Diabetes, Thyroid)</span>
         </a>
-        <div class="mega-drop" style="min-width:340px;">
-          <div class="mega-head">
-            <h3>PROGRAMMES</h3>
-            <p>Evidence-based lifestyle modification programmes for lasting transformation.</p>
-          </div>
-          <div class="mega-category">Lifestyle Modification Programs</div>
-          <ul class="mega-links">
-            <li><a href="metabolic-health.html">Lifestyle Modification for Metabolic Health<br/><span style="font-size:10px;color:#aaa;font-family:'Lato',sans-serif;font-weight:400;">(PCOD/PCOS, Diabetes, Thyroid)</span></a></li>
-            <li><a href="life-style.html">Lifestyle Modification for Every Life Stage<br/><span style="font-size:10px;color:#aaa;font-family:'Lato',sans-serif;font-weight:400;">(Pre-Pregnancy, Postpartum, Kids Nutrition, Senior Citizen Health)</span></a></li>
-            <li><a href="performance.html">Lifestyle Modification for Performance &amp; Endurance<br/><span style="font-size:10px;color:#aaa;font-family:'Lato',sans-serif;font-weight:400;">(Athletic Nutrition, Body Re-composition)</span></a></li>
-            <li><a href="healthy-living.html">General Lifestyle Modification<br/><span style="font-size:10px;color:#aaa;font-family:'Lato',sans-serif;font-weight:400;">(Healthy Living)</span></a></li>
-          </ul>
-        </div>
       </li>
+
+      <li>
+        <a href="life-style.html">
+          Lifestyle Modification for Every Life Stage<br/>
+          <span>(Pre-Pregnancy, Postpartum, Kids Nutrition, Senior Citizen Health)</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="performance.html">
+          Lifestyle Modification for Performance &amp; Endurance<br/>
+          <span>(Athletic Nutrition, Body Re-composition)</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="healthy-living.html">
+          General Lifestyle Modification<br/>
+          <span>(Healthy Living)</span>
+        </a>
+      </li>
+    </ul>
+  </div>
+</li>
 
       <!-- INVITE -->
       <li>
@@ -676,7 +835,45 @@ hr.divider{border:none;border-top:1px solid rgba(44,80,22,.13);margin:0;}
   </button>
   <ul class="mob-links">
     <li><a href="#">Consult</a></li>
-    <li><a href="#">Programmes</a></li>
+    <li class="has-dropdown">
+  <a href="javascript:void(0);" class="drop-toggle">
+    Programmes
+  </a>
+
+  <div class="mega-drop mob-drop">
+    <ul class="mega-links">
+
+      <li>
+        <a href="metabolic-health.html">
+          Metabolic Health
+          <span>(PCOD/PCOS, Diabetes, Thyroid)</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="life-style.html">
+          Every Life Stage
+          <span>(Pre-Pregnancy, Postpartum, Kids Nutrition)</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="performance.html">
+          Performance & Endurance
+          <span>(Athletic Nutrition, Body Re-composition)</span>
+        </a>
+      </li>
+
+      <li>
+        <a href="healthy-living.html">
+          General Lifestyle
+          <span>(Healthy Living)</span>
+        </a>
+      </li>
+
+    </ul>
+  </div>
+</li>
     <li><a href="#">Invite</a></li>
     <li><a href="#">About Pragna</a></li>
     <li><a href="#">Event Calendar</a></li>
@@ -1037,38 +1234,108 @@ food and movement your unique body requires.
 ════════════════════════════════════════════════════════════════ -->
 <script>
 /* ── Mobile Nav ── */
-function openMob(){document.getElementById('mob-nav').classList.add('open');document.body.style.overflow='hidden';}
-function closeMob(){document.getElementById('mob-nav').classList.remove('open');document.body.style.overflow='';}
+function openMob() {
+  document.getElementById('mob-nav').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeMob() {
+  document.getElementById('mob-nav').classList.remove('open');
+  document.body.style.overflow = '';
+}
 
 /* ── Scroll fade-in ── */
-document.querySelectorAll('.fade-up').forEach(el=>{
-  new IntersectionObserver(([e])=>{if(e.isIntersecting){el.classList.add('vis');}},{threshold:.12}).observe(el);
+document.querySelectorAll('.fade-up').forEach(el => {
+  new IntersectionObserver(([e]) => {
+    if (e.isIntersecting) {
+      el.classList.add('vis');
+    }
+  }, { threshold: 0.12 }).observe(el);
 });
 
 /* ── Testimonials Auto-Slider ── */
-let tIdx=0,tTotal=3,tTimer;
-const tTrack=document.getElementById('testi-track');
-const tDots=document.querySelectorAll('#testi-dots .testi-dot');
-function goTesti(i){
-  tIdx=i;
-  tTrack.style.transform=`translateX(-${i*100}%)`;
-  tDots.forEach((d,j)=>d.classList.toggle('active',j===i));
+let tIdx = 0,
+    tTotal = 3,
+    tTimer;
+
+const tTrack = document.getElementById('testi-track');
+const tDots = document.querySelectorAll('#testi-dots .testi-dot');
+
+function goTesti(i) {
+  tIdx = i;
+
+  if (tTrack) {
+    tTrack.style.transform = `translateX(-${i * 100}%)`;
+  }
+
+  tDots.forEach((d, j) => {
+    d.classList.toggle('active', j === i);
+  });
 }
-function nextTesti(){goTesti((tIdx+1)%tTotal);}
-function prevTesti(){goTesti((tIdx-1+tTotal)%tTotal);}
-function startTestiAuto(){tTimer=setInterval(nextTesti,4800);}
-function stopTestiAuto(){clearInterval(tTimer);}
-tTrack.addEventListener('mouseenter',stopTestiAuto);
-tTrack.addEventListener('mouseleave',startTestiAuto);
-startTestiAuto();
+
+function nextTesti() {
+  goTesti((tIdx + 1) % tTotal);
+}
+
+function prevTesti() {
+  goTesti((tIdx - 1 + tTotal) % tTotal);
+}
+
+function startTestiAuto() {
+  tTimer = setInterval(nextTesti, 4800);
+}
+
+function stopTestiAuto() {
+  clearInterval(tTimer);
+}
+
+if (tTrack) {
+  tTrack.addEventListener('mouseenter', stopTestiAuto);
+  tTrack.addEventListener('mouseleave', startTestiAuto);
+  startTestiAuto();
+}
+
 /* ── Lightbox ── */
-function openLB(id){
-  const lb=document.getElementById('lightbox');
-  document.getElementById('lb-iframe').src=id==='demo'?'about:blank':'https://www.youtube.com/embed/'+id+'?autoplay=1';
-  lb.classList.add('open');document.body.style.overflow='hidden';
+function openLB(id) {
+  const lb = document.getElementById('lightbox');
+
+  document.getElementById('lb-iframe').src =
+    id === 'demo'
+      ? 'about:blank'
+      : 'https://www.youtube.com/embed/' + id + '?autoplay=1';
+
+  lb.classList.add('open');
+  document.body.style.overflow = 'hidden';
 }
-function closeLBbtn(){document.getElementById('lightbox').classList.remove('open');document.getElementById('lb-iframe').src='';document.body.style.overflow='';}
-function closeLB(e){if(e.target===document.getElementById('lightbox'))closeLBbtn();}
+
+function closeLBbtn() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.getElementById('lb-iframe').src = '';
+  document.body.style.overflow = '';
+}
+
+function closeLB(e) {
+  if (e.target === document.getElementById('lightbox')) {
+    closeLBbtn();
+  }
+}
+
+/* ── Mobile Dropdown ── */
+document.querySelectorAll('.drop-toggle').forEach(toggle => {
+  toggle.addEventListener('click', function (e) {
+    e.preventDefault();
+
+    const parent = this.parentElement;
+
+    document.querySelectorAll('.has-dropdown').forEach(item => {
+      if (item !== parent) {
+        item.classList.remove('active');
+      }
+    });
+
+    parent.classList.toggle('active');
+  });
+});
 </script>
 
 </body>
