@@ -1,0 +1,393 @@
+/* ====================================
+   PAID WORKSHOPS PAGE STYLES
+==================================== */
+
+/* HERO ACTIONS */
+
+.hero-actions{
+    display:flex;
+    gap:16px;
+    margin-top:32px;
+    flex-wrap:wrap;
+}
+
+.hero-btn{
+    width:auto !important;
+    padding:16px 32px;
+}
+
+.btn-outline{
+    display:inline-flex;
+    align-items:center;
+    justify-content:center;
+
+    padding:16px 32px;
+
+    border:2px solid var(--gold);
+
+    border-radius:50px;
+
+    color:var(--gold);
+
+    font-weight:700;
+
+    transition:var(--ease);
+}
+
+.btn-outline:hover{
+    background:var(--gold);
+    color:#fff;
+}
+
+/* ==========================
+   SHARED CARD GRIDS
+========================== */
+
+.workshop-grid,
+.audience-grid,
+.benefits-grid,
+.format-grid,
+.trust-grid{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:24px;
+}
+
+/* ==========================
+   SHARED CARD STYLING
+========================== */
+
+.workshop-card,
+.audience-card,
+.benefit-card,
+.format-card,
+.trust-card{
+    background:#EADDBF;
+
+    padding:34px 28px;
+
+    border-radius:24px;
+
+    transition:var(--ease);
+
+    box-shadow:
+    0 10px 30px rgba(0,0,0,.04);
+}
+
+.workshop-card:hover,
+.audience-card:hover,
+.benefit-card:hover,
+.format-card:hover,
+.trust-card:hover{
+    transform:translateY(-8px);
+}
+
+/* ==========================
+   WORKSHOP CARDS
+========================== */
+
+.workshop-card h3{
+    font-family:var(--ff-head);
+    color:var(--forest);
+
+    font-size:28px;
+
+    margin-bottom:14px;
+}
+
+.workshop-card p{
+    color:var(--mid);
+    margin-bottom:22px;
+}
+
+.workshop-card .btn{
+    width:auto;
+    padding:14px 24px;
+}
+
+/* ==========================
+   AUDIENCE
+========================== */
+
+.audience-card{
+    text-align:center;
+}
+
+.audience-card h3{
+    font-family:var(--ff-head);
+    color:var(--gold);
+    font-size:28px;
+}
+
+/* ==========================
+   BENEFITS
+========================== */
+
+.benefit-card{
+    text-align:center;
+}
+
+.benefit-card h3{
+    font-family:var(--ff-head);
+    color:var(--forest);
+    font-size:26px;
+}
+
+/* ==========================
+   FORMATS
+========================== */
+
+.format-card{
+    text-align:center;
+    font-weight:700;
+    color:var(--gold);
+    font-size:18px;
+}
+
+/* ==========================
+   TIMELINE
+========================== */
+
+.timeline{
+    display:grid;
+    grid-template-columns:repeat(5,1fr);
+    gap:20px;
+}
+
+.timeline-step{
+    background:#EADDBF;
+
+    border-radius:24px;
+
+    padding:28px;
+
+    text-align:center;
+
+    transition:var(--ease);
+}
+
+.timeline-step:hover{
+    transform:translateY(-6px);
+}
+
+.timeline-step h3{
+    width:56px;
+    height:56px;
+
+    margin:0 auto 16px;
+
+    border-radius:50%;
+
+    display:flex;
+    align-items:center;
+    justify-content:center;
+
+    background:var(--forest);
+
+    color:#fff;
+
+    font-family:var(--ff-head);
+    font-size:26px;
+}
+
+.timeline-step p{
+    color:var(--mid);
+    font-weight:700;
+}
+
+/* ==========================
+   TRUST
+========================== */
+
+.trust-grid{
+    grid-template-columns:repeat(4,1fr);
+}
+
+.trust-card{
+    text-align:center;
+}
+
+.trust-card h3{
+    font-family:var(--ff-head);
+    color:var(--gold);
+    font-size:24px;
+}
+
+/* ==========================
+   FORM
+========================== */
+
+.enquiry-form{
+    background:#F3E8CB;
+
+    padding:50px;
+
+    border-radius:32px;
+
+    box-shadow:
+    0 20px 50px rgba(0,0,0,.05);
+}
+
+.form-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:20px;
+}
+
+.form-group{
+    margin-top:20px;
+}
+
+.form-grid input,
+.form-grid select,
+.form-group textarea{
+    width:100%;
+
+    padding:16px 18px;
+
+    border:none;
+
+    border-radius:14px;
+
+    font-family:var(--ff-body);
+
+    background:#fff;
+
+    color:var(--dark);
+
+    font-size:15px;
+}
+
+.form-grid input:focus,
+.form-grid select:focus,
+.form-group textarea:focus{
+    outline:2px solid rgba(11,93,87,.25);
+}
+
+.form-group textarea{
+    min-height:160px;
+    resize:vertical;
+}
+
+.form-actions{
+    display:flex;
+    gap:16px;
+    flex-wrap:wrap;
+
+    margin-top:24px;
+}
+
+.form-actions .btn{
+    width:auto;
+    border:none;
+    cursor:pointer;
+}
+
+/* ==========================
+   FORM STATES
+========================== */
+
+.form-message{
+    margin-top:18px;
+    padding:14px 18px;
+
+    border-radius:12px;
+
+    display:none;
+}
+
+.form-message.success{
+    display:block;
+    background:#DCEEEA;
+    color:var(--gold);
+}
+
+.form-message.error{
+    display:block;
+    background:#ffe0de;
+    color:var(--forest);
+}
+
+/* ==========================
+   PAGE ANIMATIONS
+========================== */
+
+.workshop-card,
+.audience-card,
+.benefit-card,
+.format-card,
+.trust-card,
+.timeline-step,
+.enquiry-form{
+    opacity:0;
+
+    transform:translateY(40px);
+
+    transition:
+    opacity .8s ease,
+    transform .8s ease;
+}
+
+.show{
+    opacity:1;
+    transform:translateY(0);
+}
+
+/* ==========================
+   RESPONSIVE
+========================== */
+
+@media(max-width:992px){
+
+    .workshop-grid,
+    .audience-grid,
+    .benefits-grid,
+    .format-grid,
+    .trust-grid,
+    .timeline,
+    .form-grid{
+        grid-template-columns:1fr;
+    }
+
+    .hero-actions{
+        flex-direction:column;
+        align-items:flex-start;
+    }
+
+    .hero-actions .btn,
+    .hero-actions .btn-outline{
+        width:100%;
+        text-align:center;
+    }
+
+    .enquiry-form{
+        padding:30px;
+    }
+
+    .form-actions{
+        flex-direction:column;
+    }
+
+    .form-actions .btn,
+    .form-actions .btn-outline{
+        width:100%;
+        text-align:center;
+    }
+
+    .trust-grid{
+        grid-template-columns:1fr;
+    }
+}
+
+@media(max-width:768px){
+
+    .workshop-card h3,
+    .audience-card h3,
+    .benefit-card h3{
+        font-size:24px;
+    }
+
+    .timeline-step{
+        padding:24px;
+    }
+}
