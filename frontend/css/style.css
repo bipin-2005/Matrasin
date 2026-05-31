@@ -921,6 +921,18 @@ body.loaded {
     justify-content:center;
 }
 
+.form-status{
+    min-height:22px;
+    margin-top:18px;
+    color:var(--forest);
+    font-size:15px;
+    text-align:center;
+}
+
+.form-status.error{
+    color:#b3261e;
+}
+
 .form-actions .btn{
 
     width:auto;
@@ -928,6 +940,11 @@ body.loaded {
     min-width:220px;
 
     padding:16px 36px;
+}
+
+.form-actions .btn:disabled{
+    cursor:not-allowed;
+    opacity:.7;
 }
 
 /* =========================

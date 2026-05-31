@@ -403,18 +403,21 @@
                 <div class="form-grid">
 
                     <input type="text"
+                           name="name"
                            placeholder="Full Name"
                            required>
 
                     <input type="email"
+                           name="email"
                            placeholder="Email Address"
                            required>
 
                     <input type="tel"
+                           name="phone"
                            placeholder="Phone Number"
                            required>
 
-                    <select required>
+                    <select name="service" required>
 
                         <option value="">
                             Health Goal
@@ -451,11 +454,14 @@
                 <div class="form-group">
 
                     <textarea
+                        name="message"
                         rows="4"
                         placeholder="Tell us a little about your health goals">
                     </textarea>
 
                 </div>
+
+                <p class="form-status" id="consultationStatus" role="status"></p>
 
                 <div class="form-actions">
 
