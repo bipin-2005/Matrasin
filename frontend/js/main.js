@@ -59,6 +59,42 @@ document.querySelectorAll("a").forEach(link => {
     });
 
   }
-
+  
 });
+
+// CONSULTATION FORM SUCCESS
+
+const consultationForm =
+  document.getElementById("consultationForm");
+
+if (consultationForm) {
+
+  consultationForm.addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    document
+      .getElementById("successPopup")
+      .classList.add("show");
+
+    consultationForm.reset();
+
+  });
+
+}
+
+const closePopup =
+  document.getElementById("closePopup");
+
+if (closePopup) {
+
+  closePopup.addEventListener("click", function() {
+
+    document
+      .getElementById("successPopup")
+      .classList.remove("show");
+
+  });
+
+}
 
